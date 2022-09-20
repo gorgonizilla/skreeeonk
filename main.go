@@ -3,9 +3,9 @@ package main
 import (
 	"fmt"
 
-	"moul.io/banner"
+	"github.com/gorganzilla/skreeonk/internal/banner"
 )
 
 func main() {
-	fmt.Println(banner.Inline("skreeonk"))
+	fmt.Println(banner.Render("skreeonk"))
 }

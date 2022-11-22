@@ -1,4 +1,4 @@
-module github.com/gorgonizilla/skreeonk
+module github.com/gorgonizilla/skreeeonk
 
 go 1.18
 

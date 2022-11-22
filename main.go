@@ -3,9 +3,9 @@ package main
 import (
 	"fmt"
 
-	"github.com/gorganzilla/skreeonk/internal/banner"
+	"github.com/gorganzilla/skreeeonk/internal/banner"
 )
 
 func main() {
-	fmt.Println(banner.Render("skreeonk"))
+	fmt.Println(banner.Render("skreeeonk"))
 }

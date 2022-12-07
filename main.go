@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 
-	"github.com/gorganzilla/skreeeonk/internal/banner"
+	"github.com/gorgonizilla/skreeeonk/internal/banner"
 )
 
 func main() {

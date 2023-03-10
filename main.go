@@ -7,5 +7,10 @@ import (
 )
 
 func main() {
-	fmt.Println(banner.Render("skreeeonk"))
+	output, err := banner.Render("skreeeonk", "plain")
+	if err != nil {
+		panic(err)
+	}
+
+	fmt.Println(output)
 }

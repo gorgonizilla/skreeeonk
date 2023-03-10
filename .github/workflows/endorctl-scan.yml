@@ -18,7 +18,7 @@ jobs:
       uses: actions/checkout@v3
 
     - name: 'Run endorctl'
-      uses: endorlabs/github-action@main
+      uses: endorlabs/github-action@artifact
       with:
         namespace: "nathan-staging"
         api: "https://api.staging.endorlabs.com"
@@ -27,4 +27,6 @@ jobs:
         log_verbose: "true"
         log_level: "info"
         ci_run: "true"
-        ci_run_tags: "actor=${{ github.actor }},run-id=${{ github.run_id }},pr=${{ env.GITHUB_BRANCH }}"
+        ci_run_tags: "actor=${{ github.actor }},run-id=${{ github.run_id }},pr=${{ env.GITHUB_PR }}"
+      env:
+        GITHUB_PR: ${{ github.event.number }}

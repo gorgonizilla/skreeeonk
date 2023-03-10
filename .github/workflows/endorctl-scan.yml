@@ -1,0 +1,23 @@
+name: endorctl scan
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  endorctl-scan:
+    runs-on: ubuntu-latest
+    steps:
+    - name: 'Run endorctl'
+      uses: endorlabs/github-action@main
+      with:
+        namespace: "nathan-staging"
+        api: "https://api.staging.endorlabs.com"
+        api_key: ${{ secrets.ENDOR_API_CREDENTIALS_KEY }}
+        api_secret: ${{ secrets.ENDOR_API_CREDENTIALS_SECRET }}
+        log_verbose: "true"
+        log_level: "info"
+        ci_run: "true"
+        ci_run_tags: "actor=${{ github.actor }},run-id=${{ github.run_id }},pr=${{ env.GITHUB_BRANCH }}"

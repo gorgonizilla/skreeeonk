@@ -1,10 +1,14 @@
 name: endorctl scan
 
 on:
-  push:
-    branches: [ main ]
   pull_request:
-    branches: [ main ]
+    paths-ignore:
+      - "**.md"
+  push:
+    branches:
+      - main
+    paths-ignore:
+      - "**.md"
 
 jobs:
   endorctl-scan:

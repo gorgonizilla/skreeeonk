@@ -22,9 +22,9 @@ jobs:
       with:
         namespace: "nathan-staging"
         api: "https://api.staging.endorlabs.com"
-        # api_key: ${{ secrets.ENDOR_API_CREDENTIALS_KEY }}
-        # api_secret: ${{ secrets.ENDOR_API_CREDENTIALS_SECRET }}
-        enable_github_action_token: "true"
+        api_key: ${{ secrets.ENDOR_API_CREDENTIALS_KEY }}
+        api_secret: ${{ secrets.ENDOR_API_CREDENTIALS_SECRET }}
+        # enable_github_action_token: "true"
         log_verbose: "true"
         log_level: "info"
         ci_run: "true"

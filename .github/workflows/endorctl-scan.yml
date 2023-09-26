@@ -21,12 +21,13 @@ jobs:
       uses: actions/checkout@v3
 
     - name: 'Run endorctl'
-      uses: endorlabs/github-action@d81fa78e334fea6f88e9c89b3077d582cb357a1b
+      uses: endorlabs/github-action@72232c152b9d8d7ce7371e516b00b8ea012df486
       with:
         namespace: "nathan-staging"
         api: "https://api.staging.endorlabs.com"
-        api_key: ${{ secrets.ENDOR_API_CREDENTIALS_KEY }}
-        api_secret: ${{ secrets.ENDOR_API_CREDENTIALS_SECRET }}
+        enable_github_action_token: "true"
+        # api_key: ${{ secrets.ENDOR_API_CREDENTIALS_KEY }}
+        # api_secret: ${{ secrets.ENDOR_API_CREDENTIALS_SECRET }}
         # enable_github_action_token: "true"
         log_verbose: "true"
         log_level: "info"

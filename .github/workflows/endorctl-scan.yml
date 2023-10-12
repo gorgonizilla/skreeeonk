@@ -31,7 +31,8 @@ jobs:
         # enable_github_action_token: "true"
         log_verbose: "true"
         log_level: "info"
-        pr_run: "true"
+        pr: "true"
+        pr_baseline: "main"
         tags: "actor=${{ github.actor }},run-id=${{ github.run_id }},pr=${{ env.GITHUB_PR }}"
       env:
         GITHUB_PR: ${{ github.event.number }}

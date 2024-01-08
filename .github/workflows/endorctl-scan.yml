@@ -1,0 +1,38 @@
+name: endorctl scan
+
+on:
+  pull_request:
+    paths-ignore:
+      - "**.md"
+  push:
+    branches:
+      - main
+    paths-ignore:
+      - "**.md"
+
+jobs:
+  endorctl-scan:
+    permissions:
+     id-token: write # This is required for requesting the JWT
+     contents: read  # This is required for actions/checkout
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v3
+
+    - name: 'Run endorctl'
+      uses: endorlabs/github-action@4b58226c70c54a39b602e64b8df318c6e61757f2 # refs/mv-to-cp
+      with:
+        namespace: "nathan"
+        api: "https://api.staging.endorlabs.com"
+        enable_github_action_token: "true"
+        # api_key: ${{ secrets.ENDOR_API_CREDENTIALS_KEY }}
+        # api_secret: ${{ secrets.ENDOR_API_CREDENTIALS_SECRET }}
+        # enable_github_action_token: "true"
+        log_verbose: "true"
+        log_level: "info"
+        pr: "true"
+        pr_baseline: "main"
+        tags: "actor=${{ github.actor }},run-id=${{ github.run_id }},pr=${{ env.GITHUB_PR }}"
+      env:
+        GITHUB_PR: ${{ github.event.number }}

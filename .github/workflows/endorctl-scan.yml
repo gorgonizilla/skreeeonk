@@ -23,7 +23,7 @@ jobs:
     - name: 'Run endorctl'
       uses: endorlabs/github-action@4b58226c70c54a39b602e64b8df318c6e61757f2 # refs/mv-to-cp
       with:
-        namespace: "nathan-staging"
+        namespace: "nathan"
         api: "https://api.staging.endorlabs.com"
         enable_github_action_token: "true"
         # api_key: ${{ secrets.ENDOR_API_CREDENTIALS_KEY }}

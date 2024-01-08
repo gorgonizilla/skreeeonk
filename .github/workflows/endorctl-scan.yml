@@ -21,7 +21,7 @@ jobs:
       uses: actions/checkout@v3
 
     - name: 'Run endorctl'
-      uses: endorlabs/github-action@aa4f97322ece22b496be8b5e7e3d8f031b305db2 # refs/meta-version-client-version
+      uses: endorlabs/github-action@4b58226c70c54a39b602e64b8df318c6e61757f2 # refs/mv-to-cp
       with:
         namespace: "nathan-staging"
         api: "https://api.staging.endorlabs.com"
